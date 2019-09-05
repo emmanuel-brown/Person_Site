@@ -1,11 +1,17 @@
 {
-  "name": "portfolio",
+  "name": "portable",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "node-sass": "^4.12.0",
+    "normalize": "^0.3.1",
+    "normalize.css": "^8.0.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-scripts": "3.1.1"
+    "react-icons": "^3.7.0",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "3.1.1",
+    "react-scroll-into-view": "^1.5.3"
   },
   "scripts": {
     "start": "react-scripts start",

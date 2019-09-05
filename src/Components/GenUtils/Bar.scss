@@ -1,0 +1,44 @@
+.bar{
+    display: block;
+    position: relative;
+    height: 6vh;
+    background-color: $my-darkBlue;
+    %button{
+        color: $my-yellow;
+        z-index: 1;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 25px;
+        animation-fill-mode: forwards;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+        animation-duration: 1s;
+    }
+    &_top{
+        @extend %button;
+        animation-name: top_move;
+        
+    }
+    &_bottom{
+        @extend %button;
+        animation-name: bottom_move;
+    }
+    @keyframes top_move{
+        0%{
+            top: 50%;
+        }
+        100%{
+            top: 35%;
+        }
+    }
+    @keyframes bottom_move{
+        0%{
+            top: 50%;
+        }
+        100%{
+            top: 65%;
+        }
+    }
+}

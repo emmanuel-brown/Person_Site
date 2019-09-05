@@ -1,0 +1,27 @@
+
+@media screen and (min-width: 300px){
+    #footer{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        height: 88vh;
+        .box{
+            display: flex;
+            flex-direction: column;
+            border: 1px $my-darkBlue solid;
+            background-color: $my-darkBlue;
+            div{
+                background-color: $my-red;
+                height: 33.3333333333%;
+            }
+            h1{
+                text-align: center;
+                margin: auto 0;
+            }
+        }
+        #snap{
+            .top{
+                transform: translateX(-50%)
+            }
+        }
+    }
+}
