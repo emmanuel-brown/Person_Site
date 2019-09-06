@@ -7,6 +7,7 @@ import Scroll from '../Components/Home/scroll'
 import Bar from '../Components/GenUtils/Bar'
 import '../Components/Home/home.scss'
 import { Swipeable } from 'react-swipeable'
+//import axios from 'axios'// make sure you delete this if not in use
 
 
 class Home extends React.Component{
@@ -23,8 +24,7 @@ class Home extends React.Component{
         let canMoveDown = position < 1
 
         if(swipedUp && canMoveDown){
-            position += 1
-            
+            position += 1 
         } else if(!swipedUp && canMoveUp) {
             position -= 1
         } 
@@ -38,9 +38,9 @@ class Home extends React.Component{
         }
         return(
             <Swipeable 
-            onSwipedUp={() => this.mover(true)} 
-            onSwipedDown={() => this.mover(false)} 
-            style={SwipeStyle}>
+                onSwipedUp={() => this.mover(true)} 
+                onSwipedDown={() => this.mover(false)} 
+                style={SwipeStyle}>
                 <section id="firstView">
                     <Navbar />
                     <Headshot />

@@ -8,7 +8,7 @@ const Scroll = (props) =>{
     return(
         <>
             <div id="scroll" onClick={props.clicked}>
-                <p>Swipe Here</p>
+                <p>Swipe</p>
                     <div className="arrows">
                         <FaAngleDown className="arrow_1"/>
                         <FaAngleDoubleDown className="arrow_2"/>
