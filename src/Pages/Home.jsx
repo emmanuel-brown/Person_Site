@@ -29,8 +29,6 @@ class Home extends React.Component{
             position -= 1
         } 
         this.setState({ position })
-        console.log("can move up" + canMoveUp)
-        console.log("can move Down" + canMoveDown)
     }
 
     render(){

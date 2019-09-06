@@ -6,59 +6,46 @@ const Box = (props) =>{
     const [ bottom, setBottom ] = useState(0)
     const [ change, setChange ] = useState(true)
 
-    const timing = (pos1, pos2, pos3) =>{
+    const timing = (pos) =>{
         let negative  = props.isLeft ? "-" : ""
-        const moveTop = new Promise((doIt) =>{
-            setTimeout(() =>{
-                doIt(negative + pos1)
-            }, 0)
-        })
-        const moveMiddle = new Promise((doIt) =>{
-            setTimeout(() =>{
-                doIt(negative + pos2)
-            }, 250)
-        })
-        const moveBottom = new Promise((doIt) =>{
-            setTimeout(() =>{
-                doIt(negative + pos3)
-            }, 500)
-        })
-        moveTop.then(i => setTop(i))
-        moveMiddle.then(i => setMiddle(i))
-        moveBottom.then(i => setBottom(i))
+        const moveTop = new Promise((resolve) =>{
+            setTimeout(() => resolve(negative + pos) , 0)})
+                .then(i => setTop(i))
+
+        const moveMiddle = new Promise((resolve) =>{
+            setTimeout(() => resolve(negative + pos) , 250)})
+                .then(i => setMiddle(i))
+            
+        const moveBottom = new Promise((resolve) =>{
+            setTimeout(() => resolve(negative + pos) , 500)})
+                .then(i => setBottom(i))
     }
 
     const animate = () =>{
-        if(change){
-            timing("100", "100", "100")
-        } else if (change === false){
-            timing("0", "0", "0")
-        }
-        console.log(change)
+        change ? timing("100") : timing("0")
         setChange(!change)
     }
 
-    const topStyle = {
-        transform: `translateX(${top}%)`,
-        transition: "1s ease all"
+    function Place(moveTo){
+        this.style = {
+            transform: `translateX(${moveTo}%)`,
+            transition: "1s ease all"
+        }
     }
-    const middleStyle = {
-        transform: `translateX(${middle}%)`,
-        transition: "1s ease all"
-    }
-    const bottomStyle = {
-        transform: `translateX(${bottom}%)`,
-        transition: "1s ease all"
-    }
+
+    const topper = new Place(top)
+    const middler = new Place(middle)
+    const bottomer = new Place(bottom)
+    
     return(
         <>
             <div className="box" id={props.name} onClick={() => animate()}>
                 <div className="something"></div>
-                <div className="top" style={topStyle}></div>
-                    <div className="middle" style={middleStyle}>
+                <div className="top" style={topper.style}></div>
+                    <div className="middle" style={middler.style}>
                         <h1>{props.name}</h1>
                     </div>
-                <div className="bottom" style={bottomStyle}></div>
+                <div className="bottom" style={bottomer.style}></div>
             </div>
         </>
     )
