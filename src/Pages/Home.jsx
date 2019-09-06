@@ -6,38 +6,34 @@ import Footer from '../Components/Footer/Footer'
 import Scroll from '../Components/Home/scroll'
 import Bar from '../Components/GenUtils/Bar'
 import '../Components/Home/home.scss'
-import { useSwipeable, Swipeable } from 'react-swipeable'
+import { Swipeable } from 'react-swipeable'
 
 
 class Home extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            position: 0,
+            position: 0, //this is to determine where the site is
         }
     }
 
     mover = (swipedUp) =>{
         let { position } = this.state
-        if(swipedUp){
+        let canMoveUp = position >= 0
+        let canMoveDown = position < 1
+
+        if(swipedUp && canMoveDown){
             position += 1
-        } else{
+            
+        } else if(!swipedUp && canMoveUp) {
             position -= 1
-        }
-        console.log(position)
+        } 
         this.setState({ position })
+        console.log("can move up" + canMoveUp)
+        console.log("can move Down" + canMoveDown)
     }
 
     render(){
-        // const handlers = useSwipeable({
-        //     onSwipedUp: () => window.location.href = "#footer",
-        //     preventDefaultTouchmoveEvent: true,
-        //     trackMouse: true
-        //   });
-        // const working = {
-        //     onSwipedUp: () => console.log("going up"),
-        //     onSwipedDown: () => console.log("going down")
-        // }
         const SwipeStyle = {
             transform: `translate3d(0px, -${this.state.position}00vh, 0px)`, 
             transition: '1s ease all'
@@ -50,13 +46,17 @@ class Home extends React.Component{
                 <section id="firstView">
                     <Navbar />
                     <Headshot />
-                    <Scroll />
+                    <Scroll clicked={() => this.mover(true)}/>
                 </section>
-                <Bar isTop={true} to="#firstView"/>
-                <Footer />
-                <Bar isTop={false}/>
+                <section id="secondView">
+
+                </section>
+                <footer>
+                    <Bar isTop={true} clicked={() => this.mover(false)} />
+                    <Footer />
+                    <Bar isTop={false}  />
+                </footer>
             </Swipeable>
-        
         )
     }
 }

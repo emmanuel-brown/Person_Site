@@ -6,11 +6,11 @@ import {
 
 const Bar = (props) =>{
     return(
-        <a href={props.to}>
+        <div onClick={props.clicked}>
             <div className="bar">
                     {props.isTop ? <FaAngleUp className="bar_top" /> : <FaAngleDown className="bar_bottom" />}
             </div>
-        </a>
+        </div>
     )
 }
 

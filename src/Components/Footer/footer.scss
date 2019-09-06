@@ -5,10 +5,18 @@
         grid-template-columns: 1fr 1fr;
         height: 88vh;
         .box{
+            position: relative;
             display: flex;
             flex-direction: column;
             border: 1px $my-darkBlue solid;
             background-color: $my-darkBlue;
+            .something{
+                position: absolute;
+                display: block;
+                width: 100%;
+                height: 100%;
+                background-color: blue;
+            }
             div{
                 background-color: $my-red;
                 height: 33.3333333333%;
