@@ -1,9 +1,9 @@
 import React, { useState }from 'react'
 
 const Box = (props) =>{
-    const [ top, setTop ] = useState(0)
-    const [ middle, setMiddle ] = useState(0)
-    const [ bottom, setBottom ] = useState(0)
+    const [ top, setTop ] = useState(100)
+    const [ middle, setMiddle ] = useState(100)
+    const [ bottom, setBottom ] = useState(100)
     const [ change, setChange ] = useState(true)
 
     const timing = (pos) =>{
@@ -21,15 +21,18 @@ const Box = (props) =>{
                 .then(i => setBottom(i))
     }
 
+    
     const animate = () =>{
-        change ? timing("100") : timing("0")
+        change ? timing("0") : timing("100")
         setChange(!change)
+        console.log("animation fired");
+        
     }
-
+    
     function Place(moveTo){
         this.style = {
             transform: `translateX(${moveTo}%)`,
-            transition: "1s ease all"
+            transition: ".5s ease transform"
         }
     }
 
@@ -39,11 +42,13 @@ const Box = (props) =>{
     
     return(
         <>
-            <div className="box" id={props.name} onClick={() => animate()}>
-                <div className="something"></div>
+            <div className="box" id={props.name} onClick={() => animate()} >
+                <div className="something">
+                    <img src={props.logo} height={props.imageSize} width={props.imageSize} alt="instagram"/>
+                </div>   
                 <div className="top" style={topper.style}></div>
                     <div className="middle" style={middler.style}>
-                        <h1>{props.name}</h1>
+                        <h2>{props.username}</h2>
                     </div>
                 <div className="bottom" style={bottomer.style}></div>
             </div>

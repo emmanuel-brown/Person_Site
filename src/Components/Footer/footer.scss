@@ -9,7 +9,17 @@
             display: flex;
             flex-direction: column;
             border: 1px $my-darkBlue solid;
-            background-color: $my-darkBlue;
+            h2{
+                text-align: center;
+                font-size: 1rem;
+                color: whitesmoke
+            }
+            img{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
             .something{
                 position: absolute;
                 display: block;
@@ -20,6 +30,7 @@
             div{
                 background-color: $my-red;
                 height: 33.3333333333%;
+                max-width: 100%;
             }
             h1{
                 text-align: center;

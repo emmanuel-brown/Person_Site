@@ -5,6 +5,7 @@ import Headshot from '../Components/Home/Headshot'
 import Footer from '../Components/Footer/Footer'
 import Scroll from '../Components/Home/scroll'
 import Bar from '../Components/GenUtils/Bar'
+import Description from '../Components/description/description'
 import '../Components/Home/home.scss'
 import { Swipeable } from 'react-swipeable'
 //import axios from 'axios'// make sure you delete this if not in use
@@ -20,34 +21,39 @@ class Home extends React.Component{
 
     mover = (swipedUp) =>{
         let { position } = this.state
-        let canMoveUp = position >= 0
-        let canMoveDown = position < 1
-
+        let canMoveUp = position > 0
+        let canMoveDown = position < 2
+        console.log("firing");
+        
         if(swipedUp && canMoveDown){
             position += 1 
         } else if(!swipedUp && canMoveUp) {
             position -= 1
         } 
         this.setState({ position })
+        console.log(`position is ${position}`)
     }
 
     render(){
         const SwipeStyle = {
-            transform: `translate3d(0px, -${this.state.position}00vh, 0px)`, 
+            transform: `translate3d(0, -${this.state.position}00vh, 0)`, 
             transition: '1s ease all'
         }
         return(
             <Swipeable 
                 onSwipedUp={() => this.mover(true)} 
                 onSwipedDown={() => this.mover(false)} 
-                style={SwipeStyle}>
+                style={SwipeStyle}
+                preventDefaultTouchmoveEvent= {false}>
                 <section id="firstView">
                     <Navbar />
                     <Headshot />
                     <Scroll clicked={() => this.mover(true)}/>
                 </section>
                 <section id="secondView">
-
+                    <Bar isTop={true} clicked={() => this.mover(false)}/>
+                    <Description />
+                    <Bar isTop={false} clicked={() => this.mover(true)}/>
                 </section>
                 <footer>
                     <Bar isTop={true} clicked={() => this.mover(false)} />
