@@ -1,7 +1,8 @@
 @import '../css_utilities.scss';
-@import '../Footer/footer.scss';
 @import '../Navbar/navbar.scss';
 @import '../GenUtils/Bar.scss';
+@import '../description/description.scss';
+@import '../Footer/footer.scss';
 
 @media screen and (min-width: 300px){
     html{
@@ -18,8 +19,8 @@
         height: 100vh;
         img{
             position: absolute;
-            height: 150px;
-            width: 150px;
+            height: 180px;
+            width: 180px;
             border-radius: 100%;
             border: 6px solid $my-darkBlue;
             top: 50%;

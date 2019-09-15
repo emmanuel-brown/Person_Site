@@ -1,0 +1,20 @@
+
+@media screen and (min-width: 300px){
+    #description{
+        height: 85vh;
+        text-align: center;
+        color: white;
+        h2{
+            font-size: 2em;
+            text-decoration: underline;
+        }
+        ul{
+            list-style: none;
+            padding-inline-start: 0;
+            li{
+                display: block;
+                font-size: 1.3em;
+            }
+        }
+    }
+}

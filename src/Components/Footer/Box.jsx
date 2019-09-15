@@ -24,9 +24,7 @@ const Box = (props) =>{
     
     const animate = () =>{
         change ? timing("0") : timing("100")
-        setChange(!change)
-        console.log("animation fired");
-        
+        setChange(!change)   
     }
     
     function Place(moveTo){

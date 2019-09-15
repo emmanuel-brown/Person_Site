@@ -23,8 +23,6 @@ class Home extends React.Component{
         let { position } = this.state
         let canMoveUp = position > 0
         let canMoveDown = position < 2
-        console.log("firing");
-        
         if(swipedUp && canMoveDown){
             position += 1 
         } else if(!swipedUp && canMoveUp) {
@@ -58,7 +56,7 @@ class Home extends React.Component{
                 <footer>
                     <Bar isTop={true} clicked={() => this.mover(false)} />
                     <Footer />
-                    <Bar isTop={false}  />
+                    <Bar isLast={true} clicked={() => this.setState({position: 0})} />
                 </footer>
             </Swipeable>
         )
