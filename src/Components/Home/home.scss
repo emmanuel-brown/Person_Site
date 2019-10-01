@@ -4,10 +4,10 @@
 @import '../description/description.scss';
 @import '../Footer/footer.scss';
 
-@media screen and (min-width: 300px){
+@media screen and (min-width: 10px){
     html{
         scroll-behavior: smooth;
-        overflow: hidden !important;
+        overflow: hidden; 
     }
     body{
         font-family: 'Manjari', sans-serif;
@@ -63,10 +63,27 @@
             
         }
     }
+    #swipe{ display: block; }
+    #click{ display: none; }
 }
 
 @media screen and (min-width: 600px){
-
+    #firstView{
+        position: relative;
+        height: 100vh;
+        img{
+            position: absolute;
+            height: 300px;
+            width: 300px;
+            border-radius: 100%;
+            border: 6px solid $my-darkBlue;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -100%);
+        }
+    }
+    #swipe{ display: none; }
+    #click{ display: block; }
 }
 @keyframes move1{
     0%{

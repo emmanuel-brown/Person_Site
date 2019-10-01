@@ -19,22 +19,29 @@ class Home extends React.Component{
         }
     }
 
+    componentDidMount(){
+
+    }
+
+    componentWillUnmount(){
+        window.location.href = '/#firstView'
+    }
+
     mover = (swipedUp) =>{
         let { position } = this.state
-        let canMoveUp = position > 0
+        let canMoveUp = position < 0
         let canMoveDown = position < 2
         if(swipedUp && canMoveDown){
-            position += 1 
+            position -= 1 
         } else if(!swipedUp && canMoveUp) {
-            position -= 1
+            position += 1
         } 
         this.setState({ position })
-        console.log(`position is ${position}`)
     }
 
     render(){
         const SwipeStyle = {
-            transform: `translate3d(0, -${this.state.position}00vh, 0)`, 
+            transform: `translate3d(0, ${this.state.position}00vh, 0)`, 
             transition: '1s ease all'
         }
         return(

@@ -1,4 +1,5 @@
 import React from 'react'
+import Experience from './Experiences'
 
 const description = () =>(
     <div id="description">
@@ -6,20 +7,31 @@ const description = () =>(
             <h2>Coding Strong Suits</h2>
             <ul>
                 <li>HTML</li>
-                <li>CSS (SASS)</li>
+                <li>SCSS</li>
                 <li>Javascript</li>
                 <li>ReactJs</li>
+                <li>Node.Js</li>
+                <li>Java</li>
+                <li>MySQLl</li>
+                <li>SQL</li>
             </ul>
-            <h2>Profesional Development</h2>
+            <h2>Experience</h2>
             <ul>
-                <li>Enjoys communicating and sharing code</li>
-                <li>ToastMasters</li>
-                <li>Study and Practice Emotional Entelligence</li>
-            </ul>
-            <h2>Work Ethic</h2>
-            <ul>
-                <li>Always ready to learn</li>
-                <li>Never complain</li>
+                <Experience 
+                    exp="Ecomerce App"
+                    github="https://github.com/emmanuel-brown/ProductRN" 
+                    site="https://stoic-johnson-039d68.netlify.com/"
+                />
+                <Experience 
+                    exp="React Calendar"
+                    github="https://github.com/emmanuel-brown/reactCalendar" 
+                    site=""
+                />
+                <Experience 
+                    exp="React Messaging App"
+                    github="https://github.com/emmanuel-brown/react3" 
+                    site="https://upbeat-mcclintock-0ec5b4.netlify.com/"
+                />
             </ul>
         </div>
     </div>

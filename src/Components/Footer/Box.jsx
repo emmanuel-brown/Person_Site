@@ -1,4 +1,5 @@
 import React, { useState }from 'react'
+import { FaExternalLinkSquareAlt as Link } from 'react-icons/fa'
 
 const Box = (props) =>{
     const [ top, setTop ] = useState(100)
@@ -46,7 +47,7 @@ const Box = (props) =>{
                 </div>   
                 <div className="top" style={topper.style}></div>
                     <div className="middle" style={middler.style}>
-                        <h2>{props.username}</h2>
+                        <h2><a href={props.link} target="blank">{props.username} <Link style={{color: "#3F88C5"}}/></a></h2>
                     </div>
                 <div className="bottom" style={bottomer.style}></div>
             </div>
