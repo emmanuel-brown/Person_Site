@@ -12,7 +12,7 @@ const description = () =>(
                 <li>ReactJs</li>
                 <li>Node.Js</li>
                 <li>Java</li>
-                <li>MySQLl</li>
+                <li>MySQL</li>
                 <li>SQL</li>
             </ul>
             <h2>Experience</h2>
