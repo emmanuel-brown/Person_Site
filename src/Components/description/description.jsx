@@ -25,7 +25,7 @@ const description = () =>(
                 <Experience 
                     exp="React Calendar"
                     github="https://github.com/emmanuel-brown/reactCalendar" 
-                    site=""
+                    site="https://optimistic-cori-69b414.netlify.com/"
                 />
                 <Experience 
                     exp="React Messaging App"
