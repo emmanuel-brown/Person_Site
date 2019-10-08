@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import 'normalize.css'
 import Navbar from '../Components/Navbar/Navbar'
 import Headshot from '../Components/Home/Headshot'
@@ -19,10 +19,6 @@ class Home extends React.Component{
         }
     }
 
-    componentDidMount(){
-
-    }
-
     componentWillUnmount(){
         window.location.href = '/#firstView'
     }
@@ -30,7 +26,9 @@ class Home extends React.Component{
     mover = (swipedUp) =>{
         let { position } = this.state
         let canMoveUp = position < 0
-        let canMoveDown = position < 2
+        let canMoveDown = position > -2
+        console.log( position )
+        console.log(canMoveDown)
         if(swipedUp && canMoveDown){
             position -= 1 
         } else if(!swipedUp && canMoveUp) {
@@ -60,6 +58,9 @@ class Home extends React.Component{
                     <Description />
                     <Bar isTop={false} clicked={() => this.mover(true)}/>
                 </section>
+                {/* <section id="thirdView">
+                    <Bar isTop={ true } clicked
+                </section> */}
                 <footer>
                     <Bar isTop={true} clicked={() => this.mover(false)} />
                     <Footer />
