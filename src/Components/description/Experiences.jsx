@@ -20,7 +20,7 @@ const Experiences = (props) =>{
     }
     return (
         <React.Fragment>
-            <li className="exp" onClick={() => {setSite(!site); console.log("trasition was fired")}}>
+            <li className="exp" onClick={() => setSite(!site)}>
                 {props.exp} <FaCaretDown style={flipCaret}/>
                 <div className="exp-sites" style={movement}>
                     <a href={props.github} target="blank" style={{ display: `${props.github === "" ? "none" : "block"}`}}>

@@ -1,0 +1,49 @@
+
+
+@media screen and (min-width: 10px){
+    #thirdView{
+        height: 100vh;
+        #Resume{
+            position: relative;
+            height: 88vh;
+            background-image: url('./Resume.png');
+            background-size: cover;
+            #button{
+                position: absolute;
+                background-color: $my-darkBlue;
+                height: 5em;
+                width: 12em;
+                border: {
+                    bottom-left-radius: 20% 40%;
+                    top-left-radius: 20% 40%;
+                    bottom-right-radius: 20% 40%;
+                    top-right-radius: 20% 40%;
+                }
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                &:hover{
+                    color: $my-darkBlue;
+                    background-color: $my-red;
+                }
+                p{
+                    color: $my-yellow;
+                    text-align: center;
+                    line-height: 1em;
+                    font-size: 2em;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 600px){
+    #thirdView #Resume #button{
+        height: 8em;
+        width: 18em;
+        p{
+            font-size: 3em;
+            line-height: 1em;
+        }
+    }
+}

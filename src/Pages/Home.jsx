@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import 'normalize.css'
 import Navbar from '../Components/Navbar/Navbar'
 import Headshot from '../Components/Home/Headshot'
-import Footer from '../Components/Footer/Footer'
 import Scroll from '../Components/Home/scroll'
+import Resume from '../Components/Resume/Resume'
+import Footer from '../Components/Footer/Footer'
 import Bar from '../Components/GenUtils/Bar'
 import Description from '../Components/description/description'
 import '../Components/Home/home.scss'
@@ -26,9 +27,7 @@ class Home extends React.Component{
     mover = (swipedUp) =>{
         let { position } = this.state
         let canMoveUp = position < 0
-        let canMoveDown = position > -2
-        console.log( position )
-        console.log(canMoveDown)
+        let canMoveDown = position > -3 // must be negative
         if(swipedUp && canMoveDown){
             position -= 1 
         } else if(!swipedUp && canMoveUp) {
@@ -58,9 +57,11 @@ class Home extends React.Component{
                     <Description />
                     <Bar isTop={false} clicked={() => this.mover(true)}/>
                 </section>
-                {/* <section id="thirdView">
-                    <Bar isTop={ true } clicked
-                </section> */}
+                <section id="thirdView">
+                    <Bar isTop={ true } clicked={() => this.mover(false)}/>
+                    <Resume />
+                    <Bar isTop={ false } clicked={() => this.mover(true)}/>
+                </section>
                 <footer>
                     <Bar isTop={true} clicked={() => this.mover(false)} />
                     <Footer />
