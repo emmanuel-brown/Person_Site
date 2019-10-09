@@ -19,16 +19,6 @@
     #firstView{
         position: relative;
         height: 100vh;
-        #position{
-            position: absolute;
-            top: 72%;
-            left: 50%;
-            transform: translate(-50%, -100%);
-            font-size: 20px;
-            text-align: center;
-            margin: 0;
-            width: 80%;
-        }
     }
     #scroll{
         position: absolute;
@@ -73,21 +63,6 @@
     #firstView{
         position: relative;
         height: 100vh;
-        #headShot{
-            img{
-                position: absolute;
-                height: 300px;
-                width: 300px;
-                border-radius: 100%;
-                border: 6px solid $my-darkBlue;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -100%);
-            }
-        }
-        #position{
-            top: 60%;
-        }
     }
     #swipe{ display: none; }
     #click{ display: block; }
