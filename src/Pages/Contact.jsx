@@ -48,8 +48,8 @@ const Contact = () =>{
             console.table(values)
         } else{
             console.log(valid(true))
+            e.preventDefault()
         }
-        e.preventDefault()
     }
 
     return(
