@@ -8,7 +8,7 @@ import {
 
 import Home from './Pages/Home';
 import Contact from './Pages/Contact'
-import NotFound from './Pages/NotFound';
+// import NotFound from './Pages/NotFound';
 
 function App() {
   return (
@@ -16,8 +16,8 @@ function App() {
       <Switch>
         <Route exact path="/" component={ Home } />
         <Route exact path="/contact" component={ Contact } />
-        <Route exact path="/404" component={ NotFound } />
-        <Redirect to="/404" />
+        {/* <Route exact path="/404" component={ NotFound } />
+        <Redirect to="/404" /> */}
       </Switch>
     </BrowserRouter>
   );
