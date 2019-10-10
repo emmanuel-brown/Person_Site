@@ -36,14 +36,19 @@ const Contact = () =>{
     }
 
     function send (e){
-        fetch("/", {
-            method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: encode({ "form-name": "contact", ...values })
-          })
-            .then(() => alert("Success!"))
-            .catch(error => alert(error));
-        console.log(`Is it valid ${ valid(true) }`)
+        if(valid()){
+            fetch("/", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: encode({ "form-name": "contact", ...values })
+            })
+                .then(() => alert("Success!"))
+                .catch(error => alert(error));
+            console.log(`Is it valid ${ valid(true) }`)
+            console.table(values)
+        } else{
+            console.log(valid(true))
+        }
         e.preventDefault()
     }
 
