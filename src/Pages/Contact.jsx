@@ -4,6 +4,12 @@ import { useForm } from '../Components/GenUtils/useForm'
 import V from 'validator'
 import '../Components/Home/home.scss'
 
+const encode = (data) => {
+    return Object.keys(data)
+        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&");
+}
+
 const Contact = () =>{
     const [values, handleChange] = useForm({
         firstName: "",
@@ -30,8 +36,15 @@ const Contact = () =>{
     }
 
     function send (e){
-        e.preventDefault()
+        fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: encode({ "form-name": "contact", ...this.state })
+          })
+            .then(() => alert("Success!"))
+            .catch(error => alert(error));
         console.log(`Is it valid ${ valid(true) }`)
+        e.preventDefault()
     }
 
     return(
@@ -39,14 +52,10 @@ const Contact = () =>{
             <Navbar />
             <div id="contact">
                 <h1>Contact Form</h1>
-                <form onSubmit={ send } data-netlify="true">
-                    <input type="text" name="firstName" value={ values.firstName } onChange={ handleChange }/>
-                    <input type="text" name="lastName" value={ values.lastName } onChange={ handleChange }/>
-                    <input type="text" name="email" value={ values.email } onChange={ handleChange }/>
-                    <input type="file" name="myfile" id="myfile" palceholder="Upload File" />
-                    <div className="file">
-                        <div data-netlify-recaptcha="true"></div>
-                    </div>
+                <form onSubmit={ send } action="POST">
+                    <input type="text" name="firstName" value={ values.firstName } onChange={ handleChange }/><br /><br />
+                    <input type="text" name="lastName" value={ values.lastName } onChange={ handleChange }/><br /><br />
+                    <input type="text" name="email" value={ values.email } onChange={ handleChange }/><br /><br />
                     <input type="submit" value="Submit"/>
                 </form>
             </div>
