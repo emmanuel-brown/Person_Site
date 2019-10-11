@@ -1,6 +1,7 @@
 
 @media screen and (min-width: 300px){
     #footer{
+        position: relative;
         display: grid;
         grid-template-columns: 1fr 1fr;
         height: 88vh;
@@ -40,6 +41,51 @@
         #snap{
             .top{
                 transform: translateX(-50%)
+            }
+        }
+        #clicked{
+            position: absolute;
+            background-color: $my-darkBlue;
+            height: 5em;
+            width: 12em;
+            border: {
+                bottom-left-radius: 20% 40%;
+                top-left-radius: 20% 40%;
+                bottom-right-radius: 20% 40%;
+                top-right-radius: 20% 40%;
+            }
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            &:hover{
+                color: $my-darkBlue;
+                background-color: $my-red;
+            }
+            p{
+                color: $my-yellow;
+                text-align: center;
+                line-height: 1em;
+                font-size: 2em;
+            }
+            .click{
+                display: none;
+            }
+            .press{
+                display: block;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 600px){
+    #footer{
+        #clicked{
+            .click{
+                display: block;
+            }
+            .press{
+                display: none;
             }
         }
     }
