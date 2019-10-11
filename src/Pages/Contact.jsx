@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import NetlifyForm from 'react-netlify-form'
 import Navbar from '../Components/Navbar/Navbar'
 import { useForm } from '../Components/GenUtils/useForm'
 import V from 'validator'
@@ -13,7 +14,7 @@ const encode = (data) => {
 const Contact = () =>{
     const [values, handleChange] = useForm({
         firstName: "",
-        // lastName: "",
+        lastName: "",
         email: ""
     })
 
@@ -23,10 +24,10 @@ const Contact = () =>{
             valid = false
             err && console.log("First name is not valid")
         }
-        // if(V.isEmpty(values.lastName)){
-        //     valid = false
-        //     err && console.log("Last name is not valid")
-        // }
+        if(V.isEmpty(values.lastName)){
+            valid = false
+            err && console.log("Last name is not valid")
+        }
         if(!V.isEmail(values.email)){
             valid = false
             err && console.log("Email is invalid")
@@ -56,15 +57,31 @@ const Contact = () =>{
             <Navbar />
             <div id="contact">
                 <h1>Contact Form</h1>
-                <form onSubmit={ send } action="POST">
-                    <input type="text" name="name" value={ values.firstName } onChange={ handleChange }/><br /><br />
-                    {/* <input type="text" name="lastName" value={ values.lastName } onChange={ handleChange }/><br /><br /> */}
-                    <input type="text" name="email" value={ values.email } onChange={ handleChange }/><br /><br />
-                    <input type="submit" value="Submit"/>
-                </form>
+                <NetlifyForm name='Contact Form'>
+                    {({ loading, error, success }) => (
+                        <div>
+                        {loading &&
+                            <div>Loading...</div>
+                        }
+                        {error &&
+                            <div>Your information was not sent. Please try again later.</div>
+                        }
+                        {success &&
+                            <div>Thank you for contacting us!</div>
+                        }
+                        {!loading && !success &&
+                            <div>
+                                <input type="text" name="firstName" value={ values.firstName } onChange={ handleChange }/><br /><br />
+                                <input type="text" name="lastName" value={ values.lastName } onChange={ handleChange }/><br /><br />
+                                <input type="text" name="email" value={ values.email } onChange={ handleChange }/><br /><br />
+                                <input type="submit" value="Submit"/>
+                            </div>
+                        }
+                        </div>
+                    )}
+                </NetlifyForm>
             </div>
         </>
     )
 }
-
 export default Contact
