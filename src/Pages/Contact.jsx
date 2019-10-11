@@ -13,7 +13,7 @@ const encode = (data) => {
 const Contact = () =>{
     const [values, handleChange] = useForm({
         firstName: "",
-        lastName: "",
+        // lastName: "",
         email: ""
     })
 
@@ -23,15 +23,14 @@ const Contact = () =>{
             valid = false
             err && console.log("First name is not valid")
         }
-        if(V.isEmpty(values.lastName)){
-            valid = false
-            err && console.log("Last name is not valid")
-        }
+        // if(V.isEmpty(values.lastName)){
+        //     valid = false
+        //     err && console.log("Last name is not valid")
+        // }
         if(!V.isEmail(values.email)){
             valid = false
             err && console.log("Email is invalid")
         }
-
         return valid
     }
 
@@ -58,8 +57,8 @@ const Contact = () =>{
             <div id="contact">
                 <h1>Contact Form</h1>
                 <form onSubmit={ send } action="POST">
-                    <input type="text" name="firstName" value={ values.firstName } onChange={ handleChange }/><br /><br />
-                    <input type="text" name="lastName" value={ values.lastName } onChange={ handleChange }/><br /><br />
+                    <input type="text" name="name" value={ values.firstName } onChange={ handleChange }/><br /><br />
+                    {/* <input type="text" name="lastName" value={ values.lastName } onChange={ handleChange }/><br /><br /> */}
                     <input type="text" name="email" value={ values.email } onChange={ handleChange }/><br /><br />
                     <input type="submit" value="Submit"/>
                 </form>
