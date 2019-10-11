@@ -1,0 +1,27 @@
+#contact{
+    text-align: center;
+    .form{
+        margin: 0 auto;
+        .label{
+            font-size: 2em;
+        }
+        .input{
+            width: 65%;
+            height: 29px;
+            background-color: $my-yellow;
+            color: $my-darkBlue;
+            box-sizing: border-box; 
+            box-shadow: 0px;
+            border: none;
+            border: {
+                bottom-left-radius: 7% 60%;
+                top-left-radius: 7% 60%;
+                bottom-right-radius: 7% 60%;
+                top-right-radius: 7% 60%;
+            }
+        }
+        .submit{
+            
+        }
+    }
+}

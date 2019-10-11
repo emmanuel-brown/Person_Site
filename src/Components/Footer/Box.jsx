@@ -42,7 +42,7 @@ const Box = (props) =>{
     return(
         <>
             <div className="box" id={props.name} onClick={() => animate()} >
-                <div className="something">
+                <div className="picture">
                     <img src={props.logo} height={props.imageSize} width={props.imageSize} alt="instagram"/>
                 </div>   
                 <div className="top" style={topper.style}></div>

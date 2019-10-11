@@ -56,30 +56,16 @@ const Contact = () =>{
         <>
             <Navbar />
             <div id="contact">
-                <h1>Contact Form</h1>
-                <NetlifyForm name='Contact Form'>
-                    {({ loading, error, success }) => (
-                        <div>
-                        {loading &&
-                            <div>Loading...</div>
-                        }
-                        {error &&
-                            <div>Your information was not sent. Please try again later.</div>
-                        }
-                        {success &&
-                            <div>Thank you for contacting us!</div>
-                        }
-                        {!loading && !success &&
-                            <div>
-                                <input type="text" name="firstName" value={ values.firstName } onChange={ handleChange }/><br /><br />
-                                <input type="text" name="lastName" value={ values.lastName } onChange={ handleChange }/><br /><br />
-                                <input type="text" name="email" value={ values.email } onChange={ handleChange }/><br /><br />
-                                <input type="submit" value="Submit"/>
-                            </div>
-                        }
-                        </div>
-                    )}
-                </NetlifyForm>
+                <h1>Contact Me</h1>
+                <form className="form">
+                    <label className="label" htmlFor="firsName">First Name</label><br />
+                    <input className="input" type="text" name="firstName" value={ values.firstName } onChange={ handleChange }/><br /><br />
+                    <label className="label" htmlFor="lastName">Last Name</label><br />
+                    <input className="input" type="text" name="lastName" value={ values.lastName } onChange={ handleChange }/><br /><br />
+                    <label className="label" htmlFor="email">Email</label><br />
+                    <input className="input"type="text" name="email" value={ values.email } onChange={ handleChange }/><br /><br />
+                    <input className="submit" type="submit" value="Submit"/>
+                </form>
             </div>
         </>
     )

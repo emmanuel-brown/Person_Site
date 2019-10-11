@@ -5,18 +5,18 @@ const Headshot = () =>{
     const position = "Junior Web Developer".split("")
 
     const letters = position.map((letter, i) =>{
-        return i%2 === 0 ? <span className="a">{letter}</span> :
-            <span className="b">{letter}</span>
+        return i%2 === 0 ? <span key={i} className="a">{letter}</span> :
+            <span key={i} className="b">{letter}</span>
     })
 
     return(
         <>
-        <div id="headShot">
-            <img src={ HeadShot } alt=""/>
-        </div>
-        <div id="position">
-            <h1>{ letters }</h1>
-        </div>
+            <div id="headShot">
+                <img src={ HeadShot } alt=""/>
+            </div>
+            <div id="position">
+                <h1>{ letters }</h1>
+            </div>
         </>
     )
 }

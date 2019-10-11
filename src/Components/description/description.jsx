@@ -18,6 +18,11 @@ const description = () =>(
             <h2>Experience</h2>
             <ul>
                 <Experience 
+                    exp="React Messaging App"
+                    github="https://github.com/emmanuel-brown/react3" 
+                    site="https://upbeat-mcclintock-0ec5b4.netlify.com/"
+                />
+                <Experience 
                     exp="Ecomerce App"
                     github="https://github.com/emmanuel-brown/ProductRN" 
                     site="https://stoic-johnson-039d68.netlify.com/"
@@ -30,7 +35,7 @@ const description = () =>(
                 <Experience 
                     exp="React Messaging App"
                     github="https://github.com/emmanuel-brown/react3" 
-                    site="https://upbeat-mcclintock-0ec5b4.netlify.com/"
+                    site="https://dreamy-tereshkova-06218a.netlify.com/React2/game"
                 />
             </ul>
         </div>
