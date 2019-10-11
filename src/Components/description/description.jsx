@@ -33,7 +33,7 @@ const description = () =>(
                     site="https://optimistic-cori-69b414.netlify.com/"
                 />
                 <Experience 
-                    exp="React Messaging App"
+                    exp="React Geussing Game"
                     github="https://github.com/emmanuel-brown/react3" 
                     site="https://dreamy-tereshkova-06218a.netlify.com/React2/game"
                 />
