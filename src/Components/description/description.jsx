@@ -28,7 +28,7 @@ const description = () =>(
                     site="https://optimistic-cori-69b414.netlify.com/"
                 />
                 <Experience 
-                    exp="React Messaging App"
+                    exp="React Guessing Game"
                     github="https://github.com/emmanuel-brown/react3" 
                     site="https://upbeat-mcclintock-0ec5b4.netlify.com/"
                 />
