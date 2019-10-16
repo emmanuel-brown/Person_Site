@@ -1,5 +1,5 @@
 import React from 'react'
-import HeadShot from './headShot1.jpeg'
+import HeadShot from './personal.jpeg'
 
 const Headshot = () =>{
     const position = "Junior Web Developer".split("")
