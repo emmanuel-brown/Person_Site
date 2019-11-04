@@ -11,7 +11,8 @@ const description = () =>(
                 <li>Javascript</li>
                 <li>ReactJs</li>
                 <li>Node.Js</li>
-                <li>Java</li>
+                <li>Mongoose</li>
+                <li>MongoDB</li>
                 <li>MySQL</li>
                 <li>SQL</li>
             </ul>
