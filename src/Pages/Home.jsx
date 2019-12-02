@@ -9,7 +9,6 @@ import Bar from '../Components/GenUtils/Bar'
 import Description from '../Components/description/description'
 import '../Components/Home/home.scss'
 import { Swipeable } from 'react-swipeable'
-//import axios from 'axios'// make sure you delete this if not in use
 
 
 class Home extends React.Component{

@@ -2,7 +2,7 @@ import React from 'react'
 import HeadShot from './personal.jpeg'
 
 const Headshot = () =>{
-    const position = "Junior Web Developer".split("")
+    const position = "Junior Full Stack".split("")
 
     const letters = position.map((letter, i) =>{
         return i%2 === 0 ? <span key={i} className="a">{letter}</span> :
