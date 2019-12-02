@@ -1,18 +1,6 @@
 import React from 'react'
 import './skills.scss'
 
-const skillList2 = [
-    "HTML",
-    "SCSS",
-    "Javascript",
-    "ReactJs",
-    "Node.Js",
-    "Mongoose",
-    "MongoDB",
-    "MySQL",
-    "SQL",
-]
-
 function Placement(word, x, y, rotate, size, fontSize = 3){
     const position = {
         top: `${y}%`,

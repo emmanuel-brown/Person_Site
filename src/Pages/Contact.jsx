@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react'
-import NetlifyForm from 'react-netlify-form'
+import React from 'react'
 import Navbar from '../Components/Navbar/Navbar'
 import { useForm } from '../Components/GenUtils/useForm'
 import V from 'validator'
