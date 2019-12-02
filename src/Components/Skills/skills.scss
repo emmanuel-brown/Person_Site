@@ -1,0 +1,30 @@
+@import '../css_utilities.scss';
+
+.skills{
+    &-skill{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 75%;
+        text-align: center;
+        background-color: $my-darkBlue;
+        font-weight: bolder;
+        vertical-align: center;
+        opacity: 0;
+        color: $my-lightBlue;
+        animation-name: open;
+        animation-delay: 2s;
+        animation-fill-mode: forwards;
+        animation-duration: 5s;
+        animation-timing-function: ease;
+    }
+    @keyframes open{
+        0%{
+            opacity: 0;
+        }
+        100%{
+            opacity: .5;
+        }
+    }
+} 
+

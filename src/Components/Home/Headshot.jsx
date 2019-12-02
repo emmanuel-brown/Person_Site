@@ -1,5 +1,5 @@
 import React from 'react'
-import HeadShot from './personal.jpeg'
+import HeadShot from './images/personal.jpeg'
 
 const Headshot = () =>{
     const position = "Junior Full Stack".split("")

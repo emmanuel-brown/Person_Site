@@ -3,6 +3,7 @@ import 'normalize.css'
 import Navbar from '../Components/Navbar/Navbar'
 import Headshot from '../Components/Home/Headshot'
 import Scroll from '../Components/Home/scroll'
+import Skills from '../Components/Skills/Skills'
 import Resume from '../Components/Resume/Resume'
 import Footer from '../Components/Footer/Footer'
 import Bar from '../Components/GenUtils/Bar'
@@ -49,6 +50,7 @@ class Home extends React.Component{
                 <section id="firstView">
                     <Navbar />
                     <Headshot />
+                    <Skills />
                     <Scroll clicked={() => this.mover(true)}/>
                 </section>
                 <section id="secondView">
