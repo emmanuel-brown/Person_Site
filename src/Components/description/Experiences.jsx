@@ -3,6 +3,8 @@ import {
     FaCaretDown
 } from 'react-icons/fa'
 
+import picture from './Resume.png'
+
 const Experiences = (props) =>{
     const [site, setSite] = useState(false)
 
@@ -18,10 +20,21 @@ const Experiences = (props) =>{
         transform: `rotate(${site ? '180deg' : '0deg'})`,
         transition: '1s ease all'
     }
+
+    const shrink = {
+        fontSize: `${site ? "0px" : "inherit"}`,
+        transition: '1s ease all'
+    }
     return (
         <React.Fragment>
-            <li className="exp" onClick={() => setSite(!site)}>
-                {props.exp} <FaCaretDown style={flipCaret}/>
+            <div className="exp" onClick={() => setSite(!site)}>
+                <div className="exp-image">
+                    <img src={props.pic} alt=""/>
+                </div>
+                <div className="exp-lineUp">
+                    <p className="exp-lineUp-name"style={shrink}>{props.exp}</p> 
+                    <div className="exp-caret"><FaCaretDown style={flipCaret}/></div>
+                </div>
                 <div className="exp-sites" style={movement}>
                     <a href={props.github} target="blank" style={{ display: `${props.github === "" ? "none" : "block"}`}}>
                         <p>Github</p>
@@ -30,7 +43,7 @@ const Experiences = (props) =>{
                         <p>Site</p>
                     </a>
                 </div>
-            </li>
+            </div>
         </React.Fragment>
     )
 }

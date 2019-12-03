@@ -2,6 +2,7 @@
 
 .skills{
     &-skill{
+        visibility: hidden;
         position: absolute;
         display: flex;
         align-items: center;
@@ -29,3 +30,10 @@
     }
 } 
 
+@media screen and (min-width: 1146px){
+    .skills{
+        &-skill{
+            visibility: visible;
+        }
+    }
+}

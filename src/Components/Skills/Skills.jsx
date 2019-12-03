@@ -16,11 +16,11 @@ function Placement(word, x, y, rotate, size, fontSize = 3){
 }
 
 const skillList = [
-    Placement("HTML", 10, 25, 45, 3.5),
+    Placement("HTML", 5, 20, 45, 3.5),
     Placement("SCSS", 70, 16, -45, 3.5),
     Placement("JS", 60, 60, 15, 3),
-    Placement("ReactJs", 10, 50, 15, 4),
-    Placement("Node.Js", 30, 50, 3.6, 3.8),
+    Placement("ReactJs", 16, 53, 15, 4),
+    Placement("Node.Js", 15, 40, 3.6, 3.8),
     Placement("MongoDB", 65, 40, 3.6, 5, 2),
     // Placement("MongoDB", 65, 40, 3.6, 3.8),
 ]
