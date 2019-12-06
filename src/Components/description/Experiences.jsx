@@ -3,8 +3,6 @@ import {
     FaCaretDown
 } from 'react-icons/fa'
 
-import picture from './Resume.png'
-
 const Experiences = (props) =>{
     const [site, setSite] = useState(false)
 
@@ -29,7 +27,7 @@ const Experiences = (props) =>{
         <React.Fragment>
             <div className="exp" onClick={() => setSite(!site)}>
                 <div className="exp-image">
-                    <img src={props.pic} alt=""/>
+                    <img src={props.pic} alt={props.exp}/>
                 </div>
                 <div className="exp-lineUp">
                     <p className="exp-lineUp-name"style={shrink}>{props.exp}</p> 

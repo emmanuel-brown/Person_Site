@@ -3,7 +3,6 @@ import {
   BrowserRouter,
   Route,
   Switch,
-  Redirect
 } from 'react-router-dom';
 
 import Home from './Pages/Home';

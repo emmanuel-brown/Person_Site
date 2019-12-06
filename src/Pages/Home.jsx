@@ -45,7 +45,7 @@ class Home extends React.Component{
             <Swipeable 
                 onSwipedUp={() => this.mover(true)} 
                 onSwipedDown={() => this.mover(false)} 
-                style={SwipeStyle}
+                style={ SwipeStyle }
                 preventDefaultTouchmoveEvent= {false}>
                 <section id="firstView">
                     <Navbar />
