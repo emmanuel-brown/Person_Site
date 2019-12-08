@@ -43,7 +43,7 @@ const Box = (props) =>{
         <>
             <div className="box" id={props.name} onClick={() => animate()} >
                 <div className="picture">
-                    <img src={props.logo} height={props.imageSize} width={props.imageSize} alt="instagram"/>
+                    <img src={props.logo} height={props.imageSize} width={props.imageSize} alt={props.name}/>
                 </div>   
                 <div className="top" style={topper.style}></div>
                     <div className="middle" style={middler.style}>
