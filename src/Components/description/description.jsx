@@ -41,7 +41,7 @@ const description = () =>(
                 <Experience
                     pic="./images/guessGame.png"
                     exp="React Geussing Game"
-                    github="https://github.com/emmanuel-brown/react3" 
+                    github="https://github.com/emmanuel-brown/ReactChallenges12/blob/master/src/components/react2/game/GamePlay.jsx" 
                     site="https://dreamy-tereshkova-06218a.netlify.com/React2/game"
                 />
             </div>
