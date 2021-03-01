@@ -39,10 +39,10 @@ const description = () =>(
                 />
                 <div></div>
                 <Experience
-                    pic="./images/guessGame.png"
-                    exp="React Geussing Game"
-                    github="https://github.com/emmanuel-brown/ReactChallenges12/blob/master/src/components/react2/game/GamePlay.jsx" 
-                    site="https://dreamy-tereshkova-06218a.netlify.com/React2/game"
+                    pic="./images/valorant.png"
+                    exp="Mobile Valorant"
+                    github="https://github.com/emmanuel-brown/Valorant-MobileView" 
+                    site="https://nostalgic-saha-0863de.netlify.app/"
                 />
             </div>
         </div>
